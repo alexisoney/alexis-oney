@@ -59,7 +59,7 @@ const Richtext = ({
         defaultBlokResolver: (name, props) => (
           <div className={`rich-text__component rich-text__component--${name}`}>
             {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-            <DynamicComponent {...(props as any)} component={name as any} />
+            <DynamicComponent block={{component: name, ...(props as any)}} />
           </div>
         ),
       })}
