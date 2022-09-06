@@ -1,0 +1,13 @@
+@use "@/styles/specify/_fonts" as *;
+@use "@/styles/tailwind.scss";
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* stylelint-disable-next-line selector-id-pattern */
+#__next {
+  position: relative;
+}

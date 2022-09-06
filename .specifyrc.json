@@ -1,0 +1,130 @@
+{
+  "repository": "@pelostudio/…",
+  "personalAccessToken": "…",
+  "rules": [
+    {
+      "name": "Design Tokens / Colors",
+      "path": "tailwind-theme.js",
+      "filter": {
+        "types": ["color"]
+      },
+      "parsers": [
+        {
+          "name": "to-tailwind",
+          "options": {
+            "formatConfig": {
+              "module": "commonjs"
+            },
+            "splitBy": "-"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Gradients",
+      "path": "styles/specify/_gradients.scss",
+      "filter": {
+        "types": ["gradient"]
+      },
+      "parsers": [
+        {
+          "name": "sort-by",
+          "options": {
+            "keys": ["name"]
+          }
+        },
+        {
+          "name": "to-css-custom-properties",
+          "options": {
+            "formatTokens": {
+              "color": "hex"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Assets / Font files",
+      "path": "public/fonts",
+      "filter": {
+        "types": ["font"]
+      },
+      "parsers": [
+        {
+          "name": "convert-font",
+          "options": {
+            "formats": ["woff2"]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Design Tokens / Font face",
+      "path": "styles/specify/_fonts.scss",
+      "filter": {
+        "types": ["font"]
+      },
+      "parsers": [
+        {
+          "name": "to-css-font-import",
+          "options": {
+            "formats": ["woff2"],
+            "fontsPath": "/fonts/"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Design Tokens / Text styles",
+      "path": "styles/specify/_text-styles.scss",
+      "filter": {
+        "types": ["textStyle"]
+      },
+      "parsers": [
+        {
+          "name": "px-to-rem",
+          "options": {
+            "keys": ["fontSize", "lineHeight"]
+          }
+        },
+        {
+          "name": "to-scss-mixin-text-style",
+          "options": {
+            "exclude": ["vertical-align", "text-align"],
+            "genericFamily": "sans-serif"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vectors",
+      "path": "assets/specify",
+      "filter": {
+        "types": ["vector"]
+      },
+      "parsers": [
+        {
+          "name": "kebabcasify",
+          "options": {
+            "keys": ["name"]
+          }
+        },
+        {
+          "name": "svgo",
+          "options": {
+            "svgo": {
+              "plugins": [
+                {
+                  "removeViewBox": false
+                },
+                {
+                  "removeDimensions": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

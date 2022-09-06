@@ -1,0 +1,24 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "ignoreFiles": ["styles/specify/**/*"],
+  "rules": {
+    "scss/dollar-variable-pattern": null,
+    "scss/at-mixin-pattern": null,
+    "scss/at-function-pattern": null,
+    "function-name-case": null,
+    "selector-class-pattern": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": ["background-clip", "box-decoration-break", "text-fill-color"]
+      }
+    ],
+    "scss/at-rule-no-unknown": null
+  }
+}

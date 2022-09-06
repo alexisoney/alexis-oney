@@ -1,0 +1,30 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: white;
+  transition: opacity var(--entering-duration) ease-out;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.isExiting {
+  opacity: 1;
+}
+
+.isEntering {
+  transition-delay: 0.2s;
+}
+
+.isEntered {
+  // Because "display: none;" doesn't work with transition
+  transform: translateX(100%);
+}
+
+.logo {
+  height: 96px;
+  width: auto;
+}
