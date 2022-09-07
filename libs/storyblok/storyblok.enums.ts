@@ -7,6 +7,7 @@ export enum contentTypes {
 }
 
 export enum blocks {
+  BLOG_POST = 'blog-post',
   CONTENT = 'content',
   FOOTER = 'footer',
   GLOBAL_COMPONENT = 'global-component',

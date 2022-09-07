@@ -22,7 +22,14 @@ class MyDocument extends Document<{lang: string}> {
   render(): JSX.Element {
     return (
       <Html lang={this.props.lang}>
-        <Head />
+        <Head>
+          <link rel='preconnect' href='https://fonts.googleapis.com' />
+          <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='' />
+          <link
+            href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;400&display=swap'
+            rel='stylesheet'
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

@@ -1,5 +1,6 @@
 import {Story, StoryblokAsset} from '@alexisoney/storyblok-to-nextjs'
 
+import {BlogPost} from '@/app/blocks/BlogPost'
 import {Content} from '@/app/blocks/Content'
 import {Footer} from '@/app/blocks/Footer'
 import {GlobalComponent} from '@/app/blocks/GlobalComponent'
@@ -71,6 +72,7 @@ export interface ConfigStory extends Story {
 }
 
 export type StoryblokBlock =
+  | BlogPost
   | Content
   | Footer
   | GlobalComponent
