@@ -1,5 +1,6 @@
 import {Story, StoryblokAsset} from '@alexisoney/storyblok-to-nextjs'
 
+import {BlogCategory} from '@/app/blocks/BlogCategory'
 import {BlogPost} from '@/app/blocks/BlogPost'
 import {Content} from '@/app/blocks/Content'
 import {Footer} from '@/app/blocks/Footer'
@@ -12,6 +13,9 @@ import {contentTypes} from '@/libs/storyblok/storyblok.enums'
 
 export type StoryblokStory = PageStory | BlogStory
 
+export const isBlogStory = (story: Story): story is BlogStory =>
+  story.content.component === contentTypes.BLOG
+
 interface SEO {
   seo_title?: string
   seo_description?: string
@@ -23,16 +27,16 @@ interface SEO {
   seo_twitter_image?: StoryblokAsset
 }
 
-interface PageStory extends Story {
-  content: SEO & {
+type PageStory = Story<
+  SEO & {
     _uid: string
     component: contentTypes.PAGE
     blocks?: StoryblokBlock[]
   }
-}
+>
 
-interface BlogStory extends Story {
-  content: SEO & {
+type BlogStory = Story<
+  SEO & {
     _uid: string
     component: contentTypes.BLOG
     thumbnail?: StoryblokAsset
@@ -41,7 +45,7 @@ interface BlogStory extends Story {
     last_update?: string
     blocks?: StoryblokBlock[]
   }
-}
+>
 
 interface AuthorStory extends Story {
   content: {
@@ -53,7 +57,7 @@ interface AuthorStory extends Story {
   }
 }
 
-interface CategoryStory extends Story {
+export interface CategoryStory extends Story {
   content: {
     _uid: string
     component: contentTypes.CATEGORY
@@ -72,6 +76,7 @@ export interface ConfigStory extends Story {
 }
 
 export type StoryblokBlock =
+  | BlogCategory
   | BlogPost
   | Content
   | Footer

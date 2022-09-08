@@ -14,7 +14,7 @@ export const getStaticPaths = Storyblok.getStaticPaths
 export const getStaticProps = (params: GetStaticPropsContext) =>
   Storyblok.getStaticProps<StoryblokBlock, StoryblokStory, ConfigStory>(params)
 
-const Page = ({story, layout = []}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Page = ({story, layout = [], stories}: InferGetStaticPropsType<typeof getStaticProps>) => {
   if (story) {
     return (
       <>
@@ -29,7 +29,7 @@ const Page = ({story, layout = []}: InferGetStaticPropsType<typeof getStaticProp
 
           {(story.content.blocks || []).map((block) => (
             <Fragment key={block._uid}>
-              <DynamicComponent block={block} />
+              <DynamicComponent block={block} stories={stories} />
             </Fragment>
           ))}
 

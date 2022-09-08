@@ -1,17 +1,24 @@
+import BlogCategory from '@/app/blocks/BlogCategory'
+import BlogPost from '@/app/blocks/BlogPost'
 import Content from '@/app/blocks/Content'
 import Footer from '@/app/blocks/Footer'
 import GlobalComponent from '@/app/blocks/GlobalComponent'
 import LayoutContent from '@/app/blocks/LayoutContent'
 import Navigation from '@/app/blocks/Navigation'
 import {blocks} from '@/libs/storyblok/storyblok.enums'
-import {StoryblokBlock} from '@/libs/storyblok/storyblok.types'
+import {StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'
 
 type DynamicComponent = {
   block: StoryblokBlock
+  stories?: StoryblokStory[]
 }
 
-const DynamicComponent = ({block}: DynamicComponent): JSX.Element | null => {
+const DynamicComponent = ({block, stories = []}: DynamicComponent): JSX.Element | null => {
   switch (block.component) {
+    case blocks.BLOG_CATEGORY:
+      return <BlogCategory {...block} stories={stories} />
+    case blocks.BLOG_POST:
+      return <BlogPost {...block} />
     case blocks.CONTENT:
       return <Content {...block} />
     case blocks.FOOTER:
