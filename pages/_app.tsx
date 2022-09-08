@@ -5,18 +5,16 @@ import Script from 'next/script'
 
 import {PLAUSIBLE_DOMAIN} from '@/app/config'
 import useScrollRestoration from '@/app/hooks/useScrollRestoration'
-import PageTransition from '@/app/utils/PageTransition'
-import SplashScreen from '@/app/utils/SplashScreen'
 
 function MyApp({Component, pageProps, router}: AppProps) {
   useScrollRestoration(router)
 
   return (
     <>
-      <PageTransition>
-        <Component {...pageProps} />
-      </PageTransition>
-      <SplashScreen />
+      {/* <PageTransition> */}
+      <Component {...pageProps} />
+      {/* </PageTransition> */}
+      {/* <SplashScreen /> */}
       {process.env.NEXT_PUBLIC_PLAUSIBLE === 'true' && (
         <Script
           data-domain={PLAUSIBLE_DOMAIN}
