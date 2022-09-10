@@ -3,7 +3,6 @@ import {ComponentProps} from 'react'
 
 import {BlogCategory} from '@/app/blocks/BlogCategory'
 import {BlogPost} from '@/app/blocks/BlogPost'
-import {Content} from '@/app/blocks/Content'
 import {Footer} from '@/app/blocks/Footer'
 import {GlobalComponent} from '@/app/blocks/GlobalComponent'
 import {Image} from '@/app/blocks/Image'
@@ -78,7 +77,6 @@ export interface ConfigStory extends Story {
 export type StoryblokBlock =
   | BlogCategory
   | BlogPost
-  | Content
   | Footer
   | GlobalComponent
   | Image
