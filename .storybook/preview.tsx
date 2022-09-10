@@ -8,15 +8,8 @@ export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
   layout: 'fullscreen',
   controls: {
-    matchers: {
-      date: /Date$/,
-    },
-  },
-  options: {
-    storySort: {
-      method: 'alphabetical',
-      order: ['*', 'Utils'],
-    },
+    hideNoControlsWarning: true,
+    exclude: ['_uid', 'component', '_editable'],
   },
   nextRouter: {
     Provider: RouterContext.Provider,
