@@ -76,7 +76,7 @@ export interface ConfigStory extends Story {
 export type StoryblokBlock =
   | BlogCategory
   | BlogPost
-  | Footer
+  | ComponentProps<typeof Footer>
   | GlobalComponent
   | Image
   | ComponentProps<typeof Navigation>

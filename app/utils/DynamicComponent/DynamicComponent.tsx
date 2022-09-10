@@ -1,6 +1,6 @@
 import BlogCategory from '@/app/blocks/BlogCategory'
 import BlogPost from '@/app/blocks/BlogPost'
-import Footer from '@/app/blocks/Footer'
+import {Footer} from '@/app/blocks/Footer'
 import GlobalComponent from '@/app/blocks/GlobalComponent'
 import {Navigation} from '@/app/blocks/Navigation'
 import {StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'

@@ -1,7 +1,6 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
 
-import FooterComponent from './Footer'
-import {mockFooter} from './Footer.mocks'
+import {Footer as FooterComponent} from './Footer'
 
 export default {
   title: 'Blocks/Footer',
@@ -11,4 +10,3 @@ export default {
 const Template: ComponentStory<typeof FooterComponent> = (args) => <FooterComponent {...args} />
 
 export const Footer = Template.bind({})
-Footer.args = mockFooter()

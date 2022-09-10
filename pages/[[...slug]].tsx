@@ -1,7 +1,7 @@
 import {GetStaticPropsContext, InferGetStaticPropsType} from 'next'
 import {Fragment} from 'react'
 
-import Footer from '@/app/blocks/Footer'
+import {Footer} from '@/app/blocks/Footer'
 import {Navigation} from '@/app/blocks/Navigation'
 import DynamicComponent from '@/app/utils/DynamicComponent'
 import Head from '@/app/utils/Head'
