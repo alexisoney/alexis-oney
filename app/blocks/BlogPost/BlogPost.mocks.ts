@@ -1,12 +1,11 @@
 import {generateUid} from '@/.storybook/mocks'
-import {blocks} from '@/libs/storyblok/storyblok.enums'
 
 import {BlogPost} from './BlogPost'
 
 export const mockBlogPost = (props?: Partial<BlogPost>): BlogPost => {
   return {
     _uid: generateUid(),
-    component: blocks.BLOG_POST,
+    component: 'blog-post',
     richtext: {
       type: 'doc',
       content: [

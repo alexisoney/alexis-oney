@@ -1,9 +1,8 @@
 import {Block} from '@alexisoney/storyblok-to-nextjs'
 
 import {makeEditable} from '@/app/utils/utils'
-import {blocks} from '@/libs/storyblok/storyblok.enums'
 
-export interface Footer extends Block<blocks.FOOTER> {
+export interface Footer extends Block<'footer'> {
   copyright?: string
 }
 

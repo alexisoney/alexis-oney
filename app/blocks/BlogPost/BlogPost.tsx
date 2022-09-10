@@ -2,9 +2,8 @@ import {Block, StoryblokRichtext} from '@alexisoney/storyblok-to-nextjs'
 
 import Richtext from '@/app/utils/Richtext'
 import {makeEditable} from '@/app/utils/utils'
-import {blocks} from '@/libs/storyblok/storyblok.enums'
 
-export interface BlogPost extends Block<blocks.BLOG_POST> {
+export interface BlogPost extends Block<'blog-post'> {
   richtext?: StoryblokRichtext
 }
 

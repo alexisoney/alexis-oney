@@ -7,7 +7,6 @@ import {
   generateLabel,
   generateUid,
 } from '@/.storybook/mocks'
-import {blocks} from '@/libs/storyblok/storyblok.enums'
 
 import {Navigation as NavigationComponent} from './Navigation'
 
@@ -23,7 +22,7 @@ const Template: ComponentStory<typeof NavigationComponent> = (args) => (
 export const Navigation = Template.bind({})
 Navigation.args = {
   _uid: generateUid(),
-  component: blocks.NAVIGATION,
+  component: 'navigation',
   logo: generateAsset(),
   logo_link: generateInternalLink(),
   links: generateArray(3, 5).map(() => ({

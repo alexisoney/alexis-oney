@@ -7,14 +7,13 @@ const _ = require('lodash')
 
 exports.mocks = (name) => `
 import {generateUid} from '@/.storybook/mocks'
-import {blocks} from '@/libs/storyblok/storyblok.enums'
 
 import {${name}} from './${name}'
 
 export const mock${name} = (props?: Partial<${name}>): ${name} => {
   return {
     _uid: generateUid(),
-    component: blocks.${_.snakeCase(name).toUpperCase()},
+    component: ${'${_.kebabCase(name)}'},
     ...props,
   }
 }
@@ -24,10 +23,9 @@ exports.component = (name) => `
 import {Block} from '@alexisoney/storyblok-to-nextjs'
 
 import {makeEditable} from '@/app/utils/utils'
-import {blocks} from '@/libs/storyblok/storyblok.enums'
 
-export interface ${name} extends Block<blocks.${_.snakeCase(name).toUpperCase()}> {
-  heading?: string
+export interface ${name} extends Block<'${_.kebabCase(name)}'> {
+  //
 }
 
 const ${name} = ({_editable}: ${name}): JSX.Element | null => {

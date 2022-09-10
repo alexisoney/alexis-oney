@@ -3,10 +3,9 @@ import Link from 'next/link'
 
 import Richtext from '@/app/utils/Richtext'
 import {makeEditable} from '@/app/utils/utils'
-import {blocks} from '@/libs/storyblok/storyblok.enums'
 import {isBlogStory, StoryblokStory} from '@/libs/storyblok/storyblok.types'
 
-export interface BlogCategory extends Block<blocks.BLOG_CATEGORY> {
+export interface BlogCategory extends Block<'blog-category'> {
   heading?: StoryblokRichtext
   categories?: string[]
   stories?: StoryblokStory[]

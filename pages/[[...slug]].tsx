@@ -6,7 +6,6 @@ import {Navigation} from '@/app/blocks/Navigation'
 import DynamicComponent from '@/app/utils/DynamicComponent'
 import Head from '@/app/utils/Head'
 import Storyblok from '@/libs/storyblok/storyblok'
-import {blocks} from '@/libs/storyblok/storyblok.enums'
 import {ConfigStory, StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'
 
 export const getStaticPaths = Storyblok.getStaticPaths
@@ -22,9 +21,7 @@ const Page = ({story, layout = [], stories}: InferGetStaticPropsType<typeof getS
 
         <main className='relative'>
           {layout.map((block) =>
-            block.component === blocks.NAVIGATION ? (
-              <Navigation key={block._uid} {...block} />
-            ) : null
+            block.component === 'navigation' ? <Navigation key={block._uid} {...block} /> : null
           )}
 
           {(story.content.blocks || []).map((block) => (
@@ -34,7 +31,7 @@ const Page = ({story, layout = [], stories}: InferGetStaticPropsType<typeof getS
           ))}
 
           {layout.map((block) =>
-            block.component === blocks.FOOTER ? <Footer key={block._uid} {...block} /> : null
+            block.component === 'footer' ? <Footer key={block._uid} {...block} /> : null
           )}
         </main>
       </>

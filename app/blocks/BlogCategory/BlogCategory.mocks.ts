@@ -5,7 +5,7 @@ import {
   generateParagraph,
   generateUid,
 } from '@/.storybook/mocks'
-import {blocks, contentTypes} from '@/libs/storyblok/storyblok.enums'
+import {contentTypes} from '@/libs/storyblok/storyblok.enums'
 import {StoryblokStory} from '@/libs/storyblok/storyblok.types'
 
 import {BlogCategory} from './BlogCategory'
@@ -13,7 +13,7 @@ import {BlogCategory} from './BlogCategory'
 export const mockBlogCategory = (props?: Partial<BlogCategory>): BlogCategory => {
   return {
     _uid: generateUid(),
-    component: blocks.BLOG_CATEGORY,
+    component: 'blog-category',
     heading: {
       type: 'doc',
       content: [

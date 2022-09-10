@@ -1,10 +1,9 @@
 import {Block} from '@alexisoney/storyblok-to-nextjs'
 
 import DynamicComponent from '@/app/utils/DynamicComponent'
-import {blocks} from '@/libs/storyblok/storyblok.enums'
 import {StoryblokBlock} from '@/libs/storyblok/storyblok.types'
 
-export interface GlobalComponent extends Block<blocks.GLOBAL_COMPONENT> {
+export interface GlobalComponent extends Block<'global-component'> {
   reference?: {
     content?: {
       components?: StoryblokBlock[]
