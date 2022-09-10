@@ -1,19 +1,24 @@
 import {Block, StoryblokAsset, StoryblokLink} from '@alexisoney/storyblok-to-nextjs'
 
-import NavigationItem from '@/app/blocks/Navigation/NavigationItem'
-import Image from '@/app/utils/Image'
-import Link from '@/app/utils/Link'
-import {makeEditable} from '@/app/utils/utils'
-import {blocks} from '@/libs/storyblok/storyblok.enums'
-import {StoryblokBlock} from '@/libs/storyblok/storyblok.types'
+import {Image, Link, makeEditable} from '@/app/utils'
 
-export interface Navigation extends Block<blocks.NAVIGATION> {
-  logo?: StoryblokAsset
-  logo_link?: StoryblokLink
-  links?: StoryblokBlock[]
+interface NavigationItem extends Block<'navigation-item'> {
+  label?: string
+  link?: StoryblokLink
 }
 
-const Navigation = ({logo, logo_link, links = [], _editable}: Navigation): JSX.Element | null => {
+interface Navigation extends Block<'navigation'> {
+  logo?: StoryblokAsset
+  logo_link?: StoryblokLink
+  links?: NavigationItem[]
+}
+
+export const Navigation = ({
+  logo,
+  logo_link,
+  links = [],
+  _editable,
+}: Navigation): JSX.Element | null => {
   return (
     <nav {...makeEditable(_editable)} className='max-w-global mx-auto flex justify-between'>
       <Link link={logo_link} className='h-8'>
@@ -22,10 +27,15 @@ const Navigation = ({logo, logo_link, links = [], _editable}: Navigation): JSX.E
 
       <div>
         <div className='flex gap-6'>
-          {links.map((props) => {
-            if (props.component !== blocks.NAVIGATION_ITEM) return null
-            return <NavigationItem key={props._uid} {...props} />
-          })}
+          {links.map(({_uid, label, link}) => (
+            <Link
+              key={_uid}
+              className='py-1'
+              activeClassName='text-red-500'
+              label={label}
+              link={link}
+            />
+          ))}
         </div>
       </div>
     </nav>

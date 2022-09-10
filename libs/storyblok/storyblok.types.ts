@@ -1,4 +1,5 @@
 import {Story, StoryblokAsset} from '@alexisoney/storyblok-to-nextjs'
+import {ComponentProps} from 'react'
 
 import {BlogCategory} from '@/app/blocks/BlogCategory'
 import {BlogPost} from '@/app/blocks/BlogPost'
@@ -8,7 +9,6 @@ import {GlobalComponent} from '@/app/blocks/GlobalComponent'
 import {Image} from '@/app/blocks/Image'
 import {LayoutContent} from '@/app/blocks/LayoutContent'
 import {Navigation} from '@/app/blocks/Navigation'
-import {NavigationItem} from '@/app/blocks/Navigation/NavigationItem'
 import {contentTypes} from '@/libs/storyblok/storyblok.enums'
 
 export type StoryblokStory = PageStory | BlogStory
@@ -83,5 +83,4 @@ export type StoryblokBlock =
   | GlobalComponent
   | Image
   | LayoutContent
-  | Navigation
-  | NavigationItem
+  | ComponentProps<typeof Navigation>

@@ -4,7 +4,7 @@ import Content from '@/app/blocks/Content'
 import Footer from '@/app/blocks/Footer'
 import GlobalComponent from '@/app/blocks/GlobalComponent'
 import LayoutContent from '@/app/blocks/LayoutContent'
-import Navigation from '@/app/blocks/Navigation'
+import {Navigation} from '@/app/blocks/Navigation'
 import {blocks} from '@/libs/storyblok/storyblok.enums'
 import {StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'
 
