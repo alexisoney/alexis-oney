@@ -1,7 +1,15 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
 
+import {
+  generateArray,
+  generateAsset,
+  generateHeading,
+  generateParagraph,
+  generateUid,
+} from '@/.storybook/mocks'
+import {StoryblokStory} from '@/libs/storyblok/storyblok.types'
+
 import BlogCategoryComponent from './BlogCategory'
-import {mockBlogCategory} from './BlogCategory.mocks'
 
 export default {
   title: 'Blocks/BlogCategory',
@@ -13,4 +21,39 @@ const Template: ComponentStory<typeof BlogCategoryComponent> = (args) => (
 )
 
 export const BlogCategory = Template.bind({})
-BlogCategory.args = mockBlogCategory()
+BlogCategory.args = {
+  _uid: generateUid(),
+  component: 'blog-category',
+  heading: {
+    type: 'doc',
+    content: [
+      {
+        type: 'heading',
+        attrs: {
+          level: 1,
+        },
+        content: [
+          {
+            text: generateHeading(),
+            type: 'text',
+          },
+        ],
+      },
+    ],
+  },
+  stories: generateArray(3, 10).map(
+    () =>
+      ({
+        uuid: generateUid(),
+        full_slug: '/blog/my-story',
+        content: {
+          component: 'blog',
+          seo_title: generateHeading(),
+          seo_description: generateParagraph(),
+          seo_og_image: generateAsset(),
+          categories: [{uuid: 'abcd123'}],
+        },
+      } as StoryblokStory)
+  ),
+  categories: ['abcd123'],
+}

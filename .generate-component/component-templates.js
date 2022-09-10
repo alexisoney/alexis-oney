@@ -5,20 +5,6 @@
 
 const _ = require('lodash')
 
-exports.mocks = (name) => `
-import {generateUid} from '@/.storybook/mocks'
-
-import {${name}} from './${name}'
-
-export const mock${name} = (props?: Partial<${name}>): ${name} => {
-  return {
-    _uid: generateUid(),
-    component: ${'${_.kebabCase(name)}'},
-    ...props,
-  }
-}
-`
-
 exports.component = (name) => `
 import {Block} from '@alexisoney/storyblok-to-nextjs'
 
@@ -41,7 +27,6 @@ export default ${name}
 exports.story = (name) => `import {ComponentMeta, ComponentStory} from '@storybook/react'
 
 import ${name}Component from './${name}'
-import {mock${name}} from './${name}.mocks'
 
 export default {
   title: 'Blocks/${name}',
@@ -51,7 +36,9 @@ export default {
 const Template: ComponentStory<typeof ${name}Component> = (args) => <${name}Component {...args} />
 
 export const ${name} = Template.bind({})
-${name}.args = mock${name}()
+${name}.args = {
+  // 
+}
 `
 
 exports.barrel = (name) => `export {default as default} from './${name}'

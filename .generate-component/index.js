@@ -7,7 +7,7 @@ const fs = require('fs')
 const path = require('path')
 const {exec} = require('child_process')
 const _ = require('lodash')
-const {mocks, component, story, barrel} = require('./component-templates.js')
+const {component, story, barrel} = require('./component-templates.js')
 
 // grab component name from terminal argument
 const [rawName] = process.argv.slice(2)
@@ -30,7 +30,6 @@ function writeFileErrorHandler(err) {
   if (err) throw err
 }
 
-fs.writeFile(`${dir}/${name}.mocks.ts`, mocks(name), writeFileErrorHandler)
 fs.writeFile(`${dir}/${name}.stories.tsx`, story(name), writeFileErrorHandler)
 fs.writeFile(`${dir}/${name}.tsx`, component(name), writeFileErrorHandler)
 fs.writeFile(`${dir}/index.ts`, barrel(name), writeFileErrorHandler)

@@ -3,6 +3,5 @@
   "exclude": [
     "**/*.stories.tsx",
     "**/mocks.ts",
-    "**/*.mocks.ts",
   ]
 }
