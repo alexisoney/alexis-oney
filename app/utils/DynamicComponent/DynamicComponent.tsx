@@ -2,7 +2,6 @@ import BlogCategory from '@/app/blocks/BlogCategory'
 import BlogPost from '@/app/blocks/BlogPost'
 import Footer from '@/app/blocks/Footer'
 import GlobalComponent from '@/app/blocks/GlobalComponent'
-import LayoutContent from '@/app/blocks/LayoutContent'
 import {Navigation} from '@/app/blocks/Navigation'
 import {blocks} from '@/libs/storyblok/storyblok.enums'
 import {StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'
@@ -22,8 +21,6 @@ const DynamicComponent = ({block, stories = []}: DynamicComponent): JSX.Element 
       return <Footer {...block} />
     case blocks.GLOBAL_COMPONENT:
       return <GlobalComponent {...block} />
-    case blocks.LAYOUT_CONTENT:
-      return <LayoutContent {...block} />
     case blocks.NAVIGATION:
       return <Navigation {...block} />
     default:

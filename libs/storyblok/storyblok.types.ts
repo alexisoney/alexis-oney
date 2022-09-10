@@ -6,7 +6,6 @@ import {BlogPost} from '@/app/blocks/BlogPost'
 import {Footer} from '@/app/blocks/Footer'
 import {GlobalComponent} from '@/app/blocks/GlobalComponent'
 import {Image} from '@/app/blocks/Image'
-import {LayoutContent} from '@/app/blocks/LayoutContent'
 import {Navigation} from '@/app/blocks/Navigation'
 import {contentTypes} from '@/libs/storyblok/storyblok.enums'
 
@@ -80,5 +79,4 @@ export type StoryblokBlock =
   | Footer
   | GlobalComponent
   | Image
-  | LayoutContent
   | ComponentProps<typeof Navigation>
