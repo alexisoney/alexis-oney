@@ -2,6 +2,7 @@ import {GetStaticPropsContext, InferGetStaticPropsType} from 'next'
 
 import {Blog, isBlogStory} from '@/app/content-types/blog'
 import {ConfigStory} from '@/app/content-types/config'
+import {Global, isGlobalStory} from '@/app/content-types/global'
 import {isLayoutStory, Layout} from '@/app/content-types/layout'
 import {isPageStory, Page} from '@/app/content-types/page'
 import Storyblok from '@/libs/storyblok/storyblok'
@@ -20,6 +21,8 @@ const NextPage = ({story, stories = []}: InferGetStaticPropsType<typeof getStati
       return <Blog story={story} stories={stories} />
     } else if (isLayoutStory(story)) {
       return <Layout story={story} />
+    } else if (isGlobalStory(story)) {
+      return <Global story={story} />
     }
   }
 
