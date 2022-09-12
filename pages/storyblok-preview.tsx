@@ -1,6 +1,7 @@
 import {useStoryblok} from '@alexisoney/storyblok-to-nextjs'
 
-import {ConfigStory, StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'
+import {ConfigStory} from '@/app/content-types/config'
+import {StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'
 import Page from '@/pages/[[...slug]]'
 
 const StoryblokPreview = () => {

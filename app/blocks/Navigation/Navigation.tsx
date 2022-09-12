@@ -7,7 +7,7 @@ interface NavigationItem extends Block<'navigation-item'> {
   link?: StoryblokLink
 }
 
-interface Navigation extends Block<'navigation'> {
+interface NavigationProps extends Block<'navigation'> {
   logo?: StoryblokAsset
   logo_link?: StoryblokLink
   links?: NavigationItem[]
@@ -18,7 +18,7 @@ export const Navigation = ({
   logo_link,
   links = [],
   _editable,
-}: Navigation): JSX.Element | null => {
+}: NavigationProps): JSX.Element | null => {
   return (
     <nav {...makeEditable(_editable)} className='max-w-global mx-auto flex justify-between'>
       <Link link={logo_link} className='h-8'>

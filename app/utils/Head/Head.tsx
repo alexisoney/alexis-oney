@@ -3,10 +3,11 @@ import NextHead from 'next/head'
 import urljoin from 'url-join'
 
 import {DEFAULT_LOCALE, SITE_NAME, SITE_URL, THUMBNAIL} from '@/app/config'
-import {StoryblokStory} from '@/libs/storyblok/storyblok.types'
+import {BlogStory} from '@/app/content-types/blog'
+import {PageStory} from '@/app/content-types/page'
 
 type Head = {
-  story: StoryblokStory
+  story: PageStory | BlogStory
 }
 const Head = ({story}: Head): JSX.Element => {
   const getTitle = (title = story.content.seo_title) =>

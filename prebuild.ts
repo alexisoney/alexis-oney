@@ -7,8 +7,8 @@ import toIco from 'to-ico'
 import urljoin from 'url-join'
 
 import {SITE_URL, THUMBNAIL} from '@/app/config'
+import {ConfigStory} from '@/app/content-types/config'
 import Storyblok from '@/libs/storyblok/storyblok'
-import {ConfigStory} from '@/libs/storyblok/storyblok.types'
 
 generateFiles()
 
