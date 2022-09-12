@@ -69,10 +69,10 @@ const Head = ({story}: Head): JSX.Element => {
       <meta property='og:description' content={getDescription(story.content.seo_og_description)} />
       <meta property='og:image' content={getThumbnail(story.content.seo_og_image)} />
       <meta property='og:image:secure_url' content={getThumbnail(story.content.seo_og_image)} />
-      {/* <meta
+      <meta
         property='og:type'
-        content={story.content.component === contentTypes.PAGE ? 'website' : 'article'}
-      /> */}
+        content={story.content.component === 'page' ? 'website' : 'article'}
+      />
 
       {/* TWITTER */}
       <meta name='twitter:card' content='summary_large_image' />

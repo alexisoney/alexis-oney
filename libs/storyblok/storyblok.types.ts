@@ -26,5 +26,5 @@ export type StoryblokBlock =
   | BlogCategory
   | BlogPost
   | ComponentProps<typeof Footer>
-  | GlobalComponent
+  | ComponentProps<typeof GlobalComponent>
   | ComponentProps<typeof Navigation>

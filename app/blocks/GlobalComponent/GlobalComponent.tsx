@@ -3,7 +3,7 @@ import {Block} from '@alexisoney/storyblok-to-nextjs'
 import DynamicComponent from '@/app/utils/DynamicComponent'
 import {StoryblokBlock} from '@/libs/storyblok/storyblok.types'
 
-export interface GlobalComponent extends Block<'global-component'> {
+interface GlobalComponentProps extends Block<'global-component'> {
   reference?: {
     content?: {
       components?: StoryblokBlock[]
@@ -11,7 +11,7 @@ export interface GlobalComponent extends Block<'global-component'> {
   }
 }
 
-const GlobalComponent = ({reference}: GlobalComponent): JSX.Element | null => {
+export const GlobalComponent = ({reference}: GlobalComponentProps): JSX.Element | null => {
   if (!reference || !reference.content || !reference.content.components) return null
   return (
     <>
@@ -21,5 +21,3 @@ const GlobalComponent = ({reference}: GlobalComponent): JSX.Element | null => {
     </>
   )
 }
-
-export default GlobalComponent

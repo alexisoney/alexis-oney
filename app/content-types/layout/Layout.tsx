@@ -20,18 +20,11 @@ interface LayoutProps {
   isEditable?: boolean
 }
 
-export const Layout = ({story, isEditable}: LayoutProps): JSX.Element | null => {
-  if (story) {
-    const {blocks = []} = story.content
-    return (
-      <>
-        {blocks.map((block) => {
-          const _editable = isEditable === false ? undefined : block._editable
-          return <DynamicComponent key={block._uid} block={{...block, _editable}} />
-        })}
-      </>
-    )
-  }
-
-  return null
-}
+export const Layout = ({story, isEditable}: LayoutProps): JSX.Element | null => (
+  <>
+    {((story && story.content.blocks) || []).map((block) => {
+      const _editable = isEditable === false ? undefined : block._editable
+      return <DynamicComponent key={block._uid} block={{...block, _editable}} />
+    })}
+  </>
+)
