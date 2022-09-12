@@ -1,28 +1,31 @@
-import {StoryblokAsset} from '@alexisoney/storyblok-to-nextjs'
 import NextHead from 'next/head'
 import urljoin from 'url-join'
 
-import {DEFAULT_LOCALE, SITE_NAME, SITE_URL, THUMBNAIL} from '@/app/config'
+import {DEFAULT_LOCALE} from '@/app/config'
 import {BlogStory} from '@/app/content-types/blog'
+import {getConfigStory} from '@/app/content-types/config'
 import {PageStory} from '@/app/content-types/page'
+import {StoryblokStory} from '@/libs/storyblok/storyblok.types'
 
 type Head = {
   story: PageStory | BlogStory
+  stories: StoryblokStory[]
 }
-const Head = ({story}: Head): JSX.Element => {
+
+const Head = ({story, stories}: Head): JSX.Element => {
+  const {site_name, thumbnail, site_url} = (getConfigStory(stories) || {content: {}}).content
+
   const getTitle = (title = story.content.seo_title) =>
-    [SITE_NAME, title].filter(Boolean).join(' - ')
+    [title, site_name].filter(Boolean).join(' - ')
 
   const getDescription = (description = story.content.seo_title) =>
     description || story.content.seo_description || ''
 
-  const getThumbnail = (src?: StoryblokAsset): string => {
-    if (!src || typeof src === 'string' || !src.filename) return urljoin(SITE_URL, THUMBNAIL)
-    return `${src.filename}/m/1200x600`
-  }
+  const getThumbnail = (src = thumbnail): string =>
+    src && src.filename ? `${src.filename}/m/1200x600` : ''
 
-  const canonical = urljoin(SITE_URL || '', story.full_slug)
-  const metaTitle = [SITE_NAME, story.content.seo_title].filter(Boolean).join(' - ')
+  const canonical = urljoin(site_url || '', story.full_slug)
+  const metaTitle = getTitle()
 
   return (
     <NextHead>
@@ -50,7 +53,7 @@ const Head = ({story}: Head): JSX.Element => {
           <link
             key={lang}
             rel='alternate'
-            href={urljoin(SITE_URL || '', path)}
+            href={urljoin(site_url || '', path)}
             hrefLang={lang === 'default' ? DEFAULT_LOCALE : lang}
           />
         ) : null
@@ -58,13 +61,13 @@ const Head = ({story}: Head): JSX.Element => {
 
       {/* SEO */}
       <link rel='canonical' href={canonical} />
-      <title>{getTitle()}</title>
+      <title>{metaTitle}</title>
       <meta name='description' content={getDescription()} />
 
       {/* OG  */}
       <meta property='og:locale' content={story.lang} />
       <meta property='og:url' content={canonical} />
-      <meta property='og:site_name' content={SITE_NAME} />
+      <meta property='og:site_name' content={site_name} />
       <meta property='og:title' content={getTitle(story.content.seo_og_title)} />
       <meta property='og:description' content={getDescription(story.content.seo_og_description)} />
       <meta property='og:image' content={getThumbnail(story.content.seo_og_image)} />

@@ -35,7 +35,7 @@ interface BlogProps {
 export const Blog = ({story, stories}: BlogProps): JSX.Element => {
   return (
     <>
-      <Head story={story} />
+      <Head story={story} stories={stories} />
 
       <main className='relative'>
         {(story.content.blocks || []).map((block) => (

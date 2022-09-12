@@ -6,7 +6,6 @@ import path from 'path'
 import toIco from 'to-ico'
 import urljoin from 'url-join'
 
-import {SITE_URL, THUMBNAIL} from '@/app/config'
 import {ConfigStory} from '@/app/content-types/config'
 import Storyblok from '@/libs/storyblok/storyblok'
 
@@ -19,17 +18,15 @@ async function generateFiles() {
     'favicon.ico',
     'robots.txt',
     'sitemap.xml',
-    'thumbnail.jpeg',
   ]) {
     await fs.unlink(`public/${file}`, () => undefined)
   }
 
   const config = await Storyblok.getConfig<ConfigStory>()
-  const {favicon, thumbnail} = config.content
+  const {favicon, site_url = ''} = config.content
   if (favicon && favicon.filename) await generateFavicon(favicon.filename)
-  if (thumbnail && thumbnail.filename) await generateThumbnail(thumbnail.filename)
-  generateSitemap(SITE_URL)
-  generateRobots(SITE_URL)
+  generateSitemap(site_url)
+  generateRobots(site_url)
 }
 
 async function generateFavicon(source: string) {
@@ -51,19 +48,6 @@ async function generateFavicon(source: string) {
         await fs.promises.writeFile(getPath(`favicon-${size}.png`), Buffer.from(data, 'utf-8'))
       })
     }
-  }
-}
-
-async function generateThumbnail(source: string) {
-  if (source) {
-    await axios
-      .get(urljoin(source, `/m/1200x600/filters:format(jpeg)`), {responseType: 'arraybuffer'})
-      .then(async ({data}) => {
-        await fs.promises.writeFile(
-          path.resolve(__dirname, 'public', THUMBNAIL),
-          Buffer.from(data, 'utf-8')
-        )
-      })
   }
 }
 

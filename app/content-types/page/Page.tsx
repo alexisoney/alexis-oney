@@ -30,7 +30,7 @@ interface PageProps {
 export const Page = ({story, stories}: PageProps): JSX.Element => {
   return (
     <>
-      <Head story={story} />
+      <Head story={story} stories={stories} />
 
       <main className='relative'>
         <Layout story={getLayoutStory('header', stories)} isEditable={false} />
