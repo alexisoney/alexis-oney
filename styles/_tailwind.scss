@@ -4,10 +4,6 @@
 @tailwind utilities;
 
 @layer components {
-  // .font-desktop-body {
-  //   @include desktop-body;
-  // }
-
   .max-w-global {
     @apply max-w-[1440px];
   }
@@ -17,9 +13,5 @@
       grid-cols-4 px-4 gap-1
       md:grid-cols-8 md:px-8 md:gap-2
       lg:grid-cols-12 lg:px-28 lg:gap-8;
-  }
-
-  .button {
-    @apply px-6 py-4 rounded-[30px] bg-green-500 text-white hover:bg-green-300;
   }
 }
