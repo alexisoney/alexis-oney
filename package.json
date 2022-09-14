@@ -8,7 +8,7 @@
     "dev:next": "rimraf .cache && npm run prebuild && next dev",
     "prebuild": "ts-node prebuild.ts",
     "analyze": "ANALYZE=true npm run build",
-    "build": "npx tsc -p ./tsconfig.prod.json && next build",
+    "build": "npx tsc -p ./tsconfig.prod.json && next build && next export",
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
