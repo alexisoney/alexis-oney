@@ -2,6 +2,7 @@ import {Story, StoryblokAsset, StoryblokRichtext} from '@alexisoney/storyblok-to
 
 import {AuthorStory} from '@/app/content-types/author'
 import {CategoryStory} from '@/app/content-types/category'
+import {getLayoutStory, Layout} from '@/app/content-types/layout'
 import {Richtext} from '@/app/utils'
 import Head from '@/app/utils/Head'
 import {StoryblokStory} from '@/libs/storyblok/storyblok.types'
@@ -38,7 +39,11 @@ export const Blog = ({story, stories}: BlogProps): JSX.Element => {
       <Head story={story} stories={stories} />
 
       <main className='relative'>
+        <Layout story={getLayoutStory('header', stories)} isEditable={false} />
+
         <Richtext richtext={story.content.post} className='prose lg:prose-xl mx-auto' />
+
+        <Layout story={getLayoutStory('footer', stories)} isEditable={false} />
       </main>
     </>
   )
