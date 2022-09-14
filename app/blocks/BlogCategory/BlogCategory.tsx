@@ -2,8 +2,7 @@ import {Block, StoryblokRichtext} from '@alexisoney/storyblok-to-nextjs'
 import Link from 'next/link'
 
 import {isBlogStory} from '@/app/content-types/blog'
-import Richtext from '@/app/utils/Richtext'
-import {makeEditable} from '@/app/utils/utils'
+import {makeEditable, Richtext} from '@/app/utils'
 import {StoryblokStory} from '@/libs/storyblok/storyblok.types'
 
 export interface BlogCategory extends Block<'blog-category'> {

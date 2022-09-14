@@ -1,10 +1,10 @@
-import {Story, StoryblokAsset} from '@alexisoney/storyblok-to-nextjs'
+import {Story, StoryblokAsset, StoryblokRichtext} from '@alexisoney/storyblok-to-nextjs'
 
 import {AuthorStory} from '@/app/content-types/author'
 import {CategoryStory} from '@/app/content-types/category'
-import DynamicComponent from '@/app/utils/DynamicComponent'
+import {Richtext} from '@/app/utils'
 import Head from '@/app/utils/Head'
-import {StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'
+import {StoryblokStory} from '@/libs/storyblok/storyblok.types'
 
 export type BlogStory = Story<{
   _uid: string
@@ -21,7 +21,7 @@ export type BlogStory = Story<{
   authors?: AuthorStory[]
   categories?: CategoryStory[]
   last_update?: string
-  blocks?: StoryblokBlock[]
+  post?: StoryblokRichtext
 }>
 
 export const isBlogStory = (story: StoryblokStory): story is BlogStory =>
@@ -38,9 +38,7 @@ export const Blog = ({story, stories}: BlogProps): JSX.Element => {
       <Head story={story} stories={stories} />
 
       <main className='relative'>
-        {(story.content.blocks || []).map((block) => (
-          <DynamicComponent key={block._uid} block={block} stories={stories} />
-        ))}
+        <Richtext richtext={story.content.post} className='prose lg:prose-xl mx-auto' />
       </main>
     </>
   )

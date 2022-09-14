@@ -1,7 +1,6 @@
 import {ComponentProps} from 'react'
 
 import {BlogCategory} from '@/app/blocks/BlogCategory'
-import {BlogPost} from '@/app/blocks/BlogPost'
 import {Footer} from '@/app/blocks/Footer'
 import {GlobalComponent} from '@/app/blocks/GlobalComponent'
 import {Navigation} from '@/app/blocks/Navigation'
@@ -24,7 +23,6 @@ export type StoryblokStory =
 
 export type StoryblokBlock =
   | BlogCategory
-  | BlogPost
   | ComponentProps<typeof Footer>
   | ComponentProps<typeof GlobalComponent>
   | ComponentProps<typeof Navigation>

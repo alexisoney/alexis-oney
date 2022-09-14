@@ -1,4 +1,4 @@
 export {default as Image} from './Image'
 export {default as Link} from './Link'
-export {default as Richtext} from './Richtext'
+export {Richtext} from './Richtext'
 export * from './utils'

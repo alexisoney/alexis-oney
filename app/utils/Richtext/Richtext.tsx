@@ -7,7 +7,7 @@ import {isEmptyRichtext} from '@/app/utils/utils'
 
 import DynamicComponent from '../DynamicComponent'
 
-export type Richtext = {
+type RichtextProps = {
   richtext?: StoryblokRichtext
   tag?: keyof JSX.IntrinsicElements | ''
   className?: string
@@ -15,13 +15,13 @@ export type Richtext = {
   strongClassName?: string
 }
 
-const Richtext = ({
+export const Richtext = ({
   richtext,
   className,
   tagClassName,
   strongClassName,
   tag,
-}: Richtext): JSX.Element | null => {
+}: RichtextProps): JSX.Element | null => {
   if (isEmptyRichtext(richtext)) return null
 
   const Tag = tag === '' ? Fragment : tag || 'p'
@@ -66,5 +66,3 @@ const Richtext = ({
     </div>
   )
 }
-
-export default Richtext

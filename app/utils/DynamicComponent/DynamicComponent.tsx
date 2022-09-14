@@ -1,5 +1,4 @@
 import BlogCategory from '@/app/blocks/BlogCategory'
-import BlogPost from '@/app/blocks/BlogPost'
 import {Footer} from '@/app/blocks/Footer'
 import {GlobalComponent} from '@/app/blocks/GlobalComponent'
 import {Navigation} from '@/app/blocks/Navigation'
@@ -14,8 +13,6 @@ const DynamicComponent = ({block, stories = []}: DynamicComponent): JSX.Element 
   switch (block.component) {
     case 'blog-category':
       return <BlogCategory {...block} stories={stories} />
-    case 'blog-post':
-      return <BlogPost {...block} />
     case 'footer':
       return <Footer {...block} />
     case 'global-component':
