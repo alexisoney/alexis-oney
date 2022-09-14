@@ -1,12 +1,11 @@
 [build]
-  command = "npm run build && npm run export"
-  publish = "out"
+  command = "npm run build"
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "16"
   NODE_ENV = "production"
   NPM_FLAGS = "--ignore-scripts"
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [context.deploy-preview.environment]
   STORYBLOK_VERSION= "draft"
