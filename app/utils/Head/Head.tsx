@@ -35,7 +35,13 @@ const Head = ({story, stories}: Head): JSX.Element => {
       <meta name='theme-color' content='#ffffff' />
 
       {/* FONTS */}
-      {/* <link key={href} rel='preload' as='font' crossOrigin='' type='font/woff2' href={href} /> */}
+      <link
+        rel='preload'
+        as='font'
+        crossOrigin=''
+        type='font/woff2'
+        href='/fonts/IBMPlexSans-Regular.woff2'
+      />
 
       {/* FAVICON */}
       {/* https://github.com/audreyfeldroy/favicon-cheat-sheet */}
