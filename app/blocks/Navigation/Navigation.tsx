@@ -20,12 +20,14 @@ export const Navigation = ({
   _editable,
 }: NavigationProps): JSX.Element | null => {
   return (
-    <nav {...makeEditable(_editable)} className='max-w-global mx-auto flex justify-between'>
-      <Link link={logo_link} className='h-8'>
-        <Image className='h-full w-auto' {...logo} />
-      </Link>
+    <nav {...makeEditable(_editable)} className='max-w-global mx-auto flex'>
+      {logo && logo.filename && (
+        <Link link={logo_link} className='h-8'>
+          <Image className='h-full w-auto' {...logo} />
+        </Link>
+      )}
 
-      <div>
+      <div className='ml-auto'>
         <div className='flex gap-6'>
           {links.map(({_uid, label, link}) => (
             <Link
