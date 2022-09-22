@@ -1,18 +1,18 @@
-import {Story} from '@alexisoney/storyblok-to-nextjs'
+import {StoryblokStory} from '@alexisoney/storyblok-to-nextjs'
 
 import DynamicComponent from '@/app/utils/DynamicComponent'
-import {StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'
+import {CustomBlock, CustomStory} from '@/libs/storyblok/storyblok.types'
 
-export type LayoutStory = Story<{
+export type LayoutStory = StoryblokStory<{
   _uid: string
   component: 'layout'
-  blocks?: StoryblokBlock[]
+  blocks?: CustomBlock[]
 }>
 
-export const isLayoutStory = (story: StoryblokStory): story is LayoutStory =>
+export const isLayoutStory = (story: CustomStory): story is LayoutStory =>
   story.content.component === 'layout'
 
-export const getLayoutStory = (slug: string, stories: StoryblokStory[]): LayoutStory | undefined =>
+export const getLayoutStory = (slug: string, stories: CustomStory[]): LayoutStory | undefined =>
   stories.filter(isLayoutStory).find((story) => story.slug === slug)
 
 interface LayoutProps {

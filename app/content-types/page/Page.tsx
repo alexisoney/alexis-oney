@@ -1,11 +1,11 @@
-import {Story, StoryblokAsset} from '@alexisoney/storyblok-to-nextjs'
+import {StoryblokAsset, StoryblokStory} from '@alexisoney/storyblok-to-nextjs'
 
 import {getLayoutStory, Layout} from '@/app/content-types/layout'
 import DynamicComponent from '@/app/utils/DynamicComponent'
 import Head from '@/app/utils/Head'
-import {StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'
+import {CustomBlock, CustomStory} from '@/libs/storyblok/storyblok.types'
 
-export type PageStory = Story<{
+export type PageStory = StoryblokStory<{
   _uid: string
   component: 'page'
   seo_title?: string
@@ -16,15 +16,15 @@ export type PageStory = Story<{
   seo_twitter_title?: string
   seo_twitter_description?: string
   seo_twitter_image?: StoryblokAsset
-  blocks?: StoryblokBlock[]
+  blocks?: CustomBlock[]
 }>
 
-export const isPageStory = (story: StoryblokStory): story is PageStory =>
+export const isPageStory = (story: CustomStory): story is PageStory =>
   story.content.component === 'page'
 
 interface PageProps {
   story: PageStory
-  stories: StoryblokStory[]
+  stories: CustomStory[]
 }
 
 export const Page = ({story, stories}: PageProps): JSX.Element => {

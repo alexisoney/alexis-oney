@@ -7,7 +7,7 @@ import {
   generateParagraph,
   generateUid,
 } from '@/.storybook/mocks'
-import {StoryblokStory} from '@/libs/storyblok/storyblok.types'
+import {CustomStory} from '@/libs/storyblok/storyblok.types'
 
 import BlogCategoryComponent from './BlogCategory'
 
@@ -53,7 +53,7 @@ BlogCategory.args = {
           seo_og_image: generateAsset(),
           categories: [{uuid: 'abcd123'}],
         },
-      } as StoryblokStory)
+      } as CustomStory)
   ),
   categories: ['abcd123'],
 }

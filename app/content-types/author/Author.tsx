@@ -1,6 +1,6 @@
-import {Story, StoryblokAsset} from '@alexisoney/storyblok-to-nextjs'
+import {StoryblokAsset, StoryblokStory} from '@alexisoney/storyblok-to-nextjs'
 
-export type AuthorStory = Story<{
+export type AuthorStory = StoryblokStory<{
   _uid: string
   component: 'author'
   name?: string

@@ -1,14 +1,18 @@
-import {Block, StoryblokRichtext} from '@alexisoney/storyblok-to-nextjs'
+import {
+  makeEditable,
+  Richtext,
+  StoryblokBlock,
+  StoryblokRichtext,
+} from '@alexisoney/storyblok-to-nextjs'
 import Link from 'next/link'
 
 import {isBlogStory} from '@/app/content-types/blog'
-import {makeEditable, Richtext} from '@/app/utils'
-import {StoryblokStory} from '@/libs/storyblok/storyblok.types'
+import {CustomStory} from '@/libs/storyblok/storyblok.types'
 
-export interface BlogCategory extends Block<'blog-category'> {
+export interface BlogCategory extends StoryblokBlock<'blog-category'> {
   heading?: StoryblokRichtext
   categories?: string[]
-  stories?: StoryblokStory[]
+  stories?: CustomStory[]
 }
 
 const BlogCategory = ({
@@ -19,7 +23,7 @@ const BlogCategory = ({
 }: BlogCategory): JSX.Element | null => {
   return (
     <section {...makeEditable(_editable)}>
-      <Richtext richtext={heading} tag='h2' className='text-9xl' />
+      <Richtext richtext={heading} tags={{paragraph: 'h2'}} className='text-9xl' />
 
       <div className='prose'>
         <ul>

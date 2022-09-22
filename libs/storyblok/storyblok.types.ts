@@ -12,7 +12,7 @@ import {GlobalStory} from '@/app/content-types/global'
 import {LayoutStory} from '@/app/content-types/layout'
 import {PageStory} from '@/app/content-types/page/Page'
 
-export type StoryblokStory =
+export type CustomStory =
   | AuthorStory
   | BlogStory
   | CategoryStory
@@ -21,7 +21,7 @@ export type StoryblokStory =
   | LayoutStory
   | PageStory
 
-export type StoryblokBlock =
+export type CustomBlock =
   | BlogCategory
   | ComponentProps<typeof Footer>
   | ComponentProps<typeof GlobalComponent>

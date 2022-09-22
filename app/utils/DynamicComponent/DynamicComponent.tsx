@@ -2,11 +2,11 @@ import BlogCategory from '@/app/blocks/BlogCategory'
 import {Footer} from '@/app/blocks/Footer'
 import {GlobalComponent} from '@/app/blocks/GlobalComponent'
 import {Navigation} from '@/app/blocks/Navigation'
-import {StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'
+import {CustomBlock, CustomStory} from '@/libs/storyblok/storyblok.types'
 
 type DynamicComponent = {
-  block: StoryblokBlock
-  stories?: StoryblokStory[]
+  block: CustomBlock
+  stories?: CustomStory[]
 }
 
 const DynamicComponent = ({block, stories = []}: DynamicComponent): JSX.Element | null => {

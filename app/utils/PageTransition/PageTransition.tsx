@@ -1,9 +1,8 @@
-import {StoryblokAsset} from '@alexisoney/storyblok-to-nextjs'
+import {Image, StoryblokAsset} from '@alexisoney/storyblok-to-nextjs'
 import classNames from 'classnames'
 import {ReactNode, useEffect, useState} from 'react'
 
 import {PAGE_TRANSITION_ENTERING_DURATION} from '../../config'
-import Image from '../Image'
 import styles from './PageTransition.module.scss'
 
 interface PageTransition {

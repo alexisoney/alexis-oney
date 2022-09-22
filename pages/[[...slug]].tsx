@@ -6,12 +6,12 @@ import {Global, isGlobalStory} from '@/app/content-types/global'
 import {isLayoutStory, Layout} from '@/app/content-types/layout'
 import {isPageStory, Page} from '@/app/content-types/page'
 import Storyblok from '@/libs/storyblok/storyblok'
-import {StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'
+import {CustomBlock, CustomStory} from '@/libs/storyblok/storyblok.types'
 
 export const getStaticPaths = Storyblok.getStaticPaths
 
 export const getStaticProps = (params: GetStaticPropsContext) =>
-  Storyblok.getStaticProps<StoryblokBlock, StoryblokStory, ConfigStory>(params)
+  Storyblok.getStaticProps<CustomBlock, CustomStory, ConfigStory>(params)
 
 const NextPage = ({story, stories = []}: InferGetStaticPropsType<typeof getStaticProps>) => {
   if (story) {

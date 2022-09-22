@@ -1,8 +1,6 @@
-import {Block} from '@alexisoney/storyblok-to-nextjs'
+import {makeEditable, StoryblokBlock} from '@alexisoney/storyblok-to-nextjs'
 
-import {makeEditable} from '@/app/utils/utils'
-
-interface FooterProps extends Block<'footer'> {
+interface FooterProps extends StoryblokBlock<'footer'> {
   copyright?: string
 }
 

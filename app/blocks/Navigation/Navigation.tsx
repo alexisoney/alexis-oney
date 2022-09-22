@@ -1,13 +1,18 @@
-import {Block, StoryblokAsset, StoryblokLink} from '@alexisoney/storyblok-to-nextjs'
+import {
+  Image,
+  Link,
+  makeEditable,
+  StoryblokAsset,
+  StoryblokBlock,
+  StoryblokLink,
+} from '@alexisoney/storyblok-to-nextjs'
 
-import {Image, Link, makeEditable} from '@/app/utils'
-
-interface NavigationItem extends Block<'navigation-item'> {
+interface NavigationItem extends StoryblokBlock<'navigation-item'> {
   label?: string
   link?: StoryblokLink
 }
 
-interface NavigationProps extends Block<'navigation'> {
+interface NavigationProps extends StoryblokBlock<'navigation'> {
   logo?: StoryblokAsset
   logo_link?: StoryblokLink
   links?: NavigationItem[]
@@ -23,7 +28,7 @@ export const Navigation = ({
     <nav {...makeEditable(_editable)} className='max-w-global mx-auto flex'>
       {logo && logo.filename && (
         <Link link={logo_link} className='h-8'>
-          <Image className='h-full w-auto' {...logo} />
+          <Image className='h-full w-auto' src={logo.filename} alt={logo.alt} />
         </Link>
       )}
 

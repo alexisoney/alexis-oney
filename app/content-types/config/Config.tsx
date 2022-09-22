@@ -1,8 +1,8 @@
-import {Story, StoryblokAsset} from '@alexisoney/storyblok-to-nextjs'
+import {StoryblokAsset, StoryblokStory} from '@alexisoney/storyblok-to-nextjs'
 
-import {StoryblokStory} from '@/libs/storyblok/storyblok.types'
+import {CustomStory} from '@/libs/storyblok/storyblok.types'
 
-export type ConfigStory = Story<{
+export type ConfigStory = StoryblokStory<{
   _uid: string
   component: 'config'
   site_name?: string
@@ -11,8 +11,8 @@ export type ConfigStory = Story<{
   favicon?: StoryblokAsset
 }>
 
-export const isConfigStory = (story: StoryblokStory): story is ConfigStory =>
+export const isConfigStory = (story: CustomStory): story is ConfigStory =>
   story.content.component === 'config'
 
-export const getConfigStory = (stories: StoryblokStory[]): ConfigStory | undefined =>
+export const getConfigStory = (stories: CustomStory[]): ConfigStory | undefined =>
   stories.find(isConfigStory)

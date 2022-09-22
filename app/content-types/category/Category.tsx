@@ -1,6 +1,6 @@
-import {Story} from '@alexisoney/storyblok-to-nextjs'
+import {StoryblokStory} from '@alexisoney/storyblok-to-nextjs'
 
-export type CategoryStory = Story<{
+export type CategoryStory = StoryblokStory<{
   _uid: string
   component: 'category'
   name?: string

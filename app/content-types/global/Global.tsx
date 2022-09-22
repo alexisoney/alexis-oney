@@ -1,15 +1,15 @@
-import {Story} from '@alexisoney/storyblok-to-nextjs'
+import {StoryblokStory} from '@alexisoney/storyblok-to-nextjs'
 
 import DynamicComponent from '@/app/utils/DynamicComponent'
-import {StoryblokBlock, StoryblokStory} from '@/libs/storyblok/storyblok.types'
+import {CustomBlock, CustomStory} from '@/libs/storyblok/storyblok.types'
 
-export type GlobalStory = Story<{
+export type GlobalStory = StoryblokStory<{
   _uid: string
   component: 'global'
-  blocks?: StoryblokBlock[]
+  blocks?: CustomBlock[]
 }>
 
-export const isGlobalStory = (story: StoryblokStory): story is GlobalStory =>
+export const isGlobalStory = (story: CustomStory): story is GlobalStory =>
   story.content.component === 'global'
 
 export const Global = ({story}: {story?: GlobalStory}): JSX.Element | null => (

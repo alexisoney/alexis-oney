@@ -5,11 +5,11 @@ import {DEFAULT_LOCALE} from '@/app/config'
 import {BlogStory} from '@/app/content-types/blog'
 import {getConfigStory} from '@/app/content-types/config'
 import {PageStory} from '@/app/content-types/page'
-import {StoryblokStory} from '@/libs/storyblok/storyblok.types'
+import {CustomStory} from '@/libs/storyblok/storyblok.types'
 
 type Head = {
   story: PageStory | BlogStory
-  stories: StoryblokStory[]
+  stories: CustomStory[]
 }
 
 const Head = ({story, stories}: Head): JSX.Element => {

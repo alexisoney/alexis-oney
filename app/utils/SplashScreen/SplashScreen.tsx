@@ -1,9 +1,7 @@
-import {StoryblokAsset} from '@alexisoney/storyblok-to-nextjs'
+import {Image, StoryblokAsset} from '@alexisoney/storyblok-to-nextjs'
 import Head from 'next/head'
 import Script from 'next/script'
 import {useEffect} from 'react'
-
-import Image from '@/app/utils/Image'
 
 import styles from './SplashScreen.module.scss'
 
@@ -54,6 +52,7 @@ const SplashScreen = ({logo}: SplashScreen): JSX.Element => {
         </style>
       </Head>
 
+      {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
       <Script src='/splash-screen.js' strategy='beforeInteractive' />
 
       <div id={SPLASH_SCREEN_ID} className={styles.div}>
