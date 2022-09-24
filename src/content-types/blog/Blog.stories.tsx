@@ -1,6 +1,6 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
 
-import {generateUid} from '@/.storybook/mocks'
+import {generateUid} from '@/src/mocks/mocks'
 
 import {Blog as BlogComponent} from './Blog'
 

@@ -6,7 +6,7 @@ import {
   generateInternalLink,
   generateLabel,
   generateUid,
-} from '@/.storybook/mocks'
+} from '@/src/mocks/mocks'
 
 import {Navigation as NavigationComponent} from './Navigation'
 

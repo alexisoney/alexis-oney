@@ -1,13 +1,13 @@
 import {ComponentMeta, ComponentStory} from '@storybook/react'
 
+import {CustomStory} from '@/src/libs/storyblok/storyblok.types'
 import {
   generateArray,
   generateAsset,
   generateHeading,
   generateParagraph,
   generateUid,
-} from '@/.storybook/mocks'
-import {CustomStory} from '@/src/libs/storyblok/storyblok.types'
+} from '@/src/mocks/mocks'
 
 import BlogCategoryComponent from './BlogCategory'
 
