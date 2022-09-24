@@ -21,5 +21,6 @@ module.exports = withBundleAnalyzer({
   },
   images: {
     domains: ['a.storyblok.com'],
+    unoptimized: true,
   },
 })
