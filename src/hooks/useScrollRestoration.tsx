@@ -1,7 +1,7 @@
 import {NextRouter} from 'next/router'
 import {useEffect} from 'react'
 
-import {PAGE_TRANSITION_ENTERING_DURATION} from '@/app/config'
+import {PAGE_TRANSITION_ENTERING_DURATION} from '@/src/config'
 
 const KEY_NAME = 'scrollPos:'
 

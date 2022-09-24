@@ -1,11 +1,11 @@
 import NextHead from 'next/head'
 import urljoin from 'url-join'
 
-import {DEFAULT_LOCALE} from '@/app/config'
-import {BlogStory} from '@/app/content-types/blog'
-import {getConfigStory} from '@/app/content-types/config'
-import {PageStory} from '@/app/content-types/page'
 import {CustomStory} from '@/libs/storyblok/storyblok.types'
+import {DEFAULT_LOCALE} from '@/src/config'
+import {BlogStory} from '@/src/content-types/blog'
+import {getConfigStory} from '@/src/content-types/config'
+import {PageStory} from '@/src/content-types/page'
 
 type Head = {
   story: PageStory | BlogStory

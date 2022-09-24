@@ -7,7 +7,7 @@ import Document, {
   NextScript,
 } from 'next/document'
 
-import {DEFAULT_LOCALE, LOCALES} from '@/app/config'
+import {DEFAULT_LOCALE, LOCALES} from '@/src/config'
 
 class MyDocument extends Document<{lang: string}> {
   static async getInitialProps(

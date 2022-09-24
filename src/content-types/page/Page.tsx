@@ -1,9 +1,9 @@
 import {StoryblokAsset, StoryblokStory} from '@alexisoney/storyblok-to-nextjs'
 
-import {getLayoutStory, Layout} from '@/app/content-types/layout'
-import DynamicComponent from '@/app/utils/DynamicComponent'
-import Head from '@/app/utils/Head'
 import {CustomBlock, CustomStory} from '@/libs/storyblok/storyblok.types'
+import {getLayoutStory, Layout} from '@/src/content-types/layout'
+import DynamicComponent from '@/src/utils/DynamicComponent'
+import Head from '@/src/utils/Head'
 
 export type PageStory = StoryblokStory<{
   _uid: string

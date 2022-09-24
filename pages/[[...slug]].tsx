@@ -1,12 +1,12 @@
 import {GetStaticPropsContext, InferGetStaticPropsType} from 'next'
 
-import {Blog, isBlogStory} from '@/app/content-types/blog'
-import {ConfigStory} from '@/app/content-types/config'
-import {Global, isGlobalStory} from '@/app/content-types/global'
-import {isLayoutStory, Layout} from '@/app/content-types/layout'
-import {isPageStory, Page} from '@/app/content-types/page'
 import Storyblok from '@/libs/storyblok/storyblok'
 import {CustomBlock, CustomStory} from '@/libs/storyblok/storyblok.types'
+import {Blog, isBlogStory} from '@/src/content-types/blog'
+import {ConfigStory} from '@/src/content-types/config'
+import {Global, isGlobalStory} from '@/src/content-types/global'
+import {isLayoutStory, Layout} from '@/src/content-types/layout'
+import {isPageStory, Page} from '@/src/content-types/page'
 
 export const getStaticPaths = Storyblok.getStaticPaths
 

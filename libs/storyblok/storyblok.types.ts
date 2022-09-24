@@ -1,16 +1,16 @@
 import {ComponentProps} from 'react'
 
-import {BlogCategory} from '@/app/blocks/BlogCategory'
-import {Footer} from '@/app/blocks/Footer'
-import {GlobalComponent} from '@/app/blocks/GlobalComponent'
-import {Navigation} from '@/app/blocks/Navigation'
-import {AuthorStory} from '@/app/content-types/author'
-import {BlogStory} from '@/app/content-types/blog/Blog'
-import {CategoryStory} from '@/app/content-types/category'
-import {ConfigStory} from '@/app/content-types/config'
-import {GlobalStory} from '@/app/content-types/global'
-import {LayoutStory} from '@/app/content-types/layout'
-import {PageStory} from '@/app/content-types/page/Page'
+import {BlogCategory} from '@/src/blocks/BlogCategory'
+import {Footer} from '@/src/blocks/Footer'
+import {GlobalComponent} from '@/src/blocks/GlobalComponent'
+import {Navigation} from '@/src/blocks/Navigation'
+import {AuthorStory} from '@/src/content-types/author'
+import {BlogStory} from '@/src/content-types/blog/Blog'
+import {CategoryStory} from '@/src/content-types/category'
+import {ConfigStory} from '@/src/content-types/config'
+import {GlobalStory} from '@/src/content-types/global'
+import {LayoutStory} from '@/src/content-types/layout'
+import {PageStory} from '@/src/content-types/page/Page'
 
 export type CustomStory =
   | AuthorStory

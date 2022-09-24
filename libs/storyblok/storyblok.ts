@@ -1,6 +1,6 @@
 import {StoryblokToNextJS} from '@alexisoney/storyblok-to-nextjs'
 
-import {LOCALES} from '@/app/config'
+import {LOCALES} from '@/src/config'
 
 const Storyblok = new StoryblokToNextJS({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,

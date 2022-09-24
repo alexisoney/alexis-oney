@@ -3,8 +3,8 @@ import '../styles/globals.scss'
 import type {AppProps} from 'next/app'
 import Script from 'next/script'
 
-import {PLAUSIBLE_DOMAIN} from '@/app/config'
-import useScrollRestoration from '@/app/hooks/useScrollRestoration'
+import {PLAUSIBLE_DOMAIN} from '@/src/config'
+import useScrollRestoration from '@/src/hooks/useScrollRestoration'
 
 function MyApp({Component, pageProps, router}: AppProps) {
   useScrollRestoration(router)
