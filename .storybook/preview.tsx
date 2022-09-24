@@ -1,5 +1,5 @@
 import './storybook.scss'
-import '../styles/globals.scss'
+import '../src/styles/globals.scss'
 
 import {RouterContext} from 'next/dist/shared/lib/router-context'
 import * as NextImage from 'next/image'

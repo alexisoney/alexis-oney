@@ -1,5 +1,5 @@
-@use "@/styles/specify/_fonts" as *;
-@use "@/styles/tailwind.scss";
+@use './specify/_fonts' as *;
+@use './tailwind.scss';
 
 html {
   -webkit-font-smoothing: antialiased;
