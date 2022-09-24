@@ -6,8 +6,8 @@ import {
 } from '@alexisoney/storyblok-to-nextjs'
 import Link from 'next/link'
 
-import {CustomStory} from '@/libs/storyblok/storyblok.types'
 import {isBlogStory} from '@/src/content-types/blog'
+import {CustomStory} from '@/src/libs/storyblok/storyblok.types'
 
 export interface BlogCategory extends StoryblokBlock<'blog-category'> {
   heading?: StoryblokRichtext

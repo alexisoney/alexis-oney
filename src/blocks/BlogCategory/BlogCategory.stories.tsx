@@ -7,7 +7,7 @@ import {
   generateParagraph,
   generateUid,
 } from '@/.storybook/mocks'
-import {CustomStory} from '@/libs/storyblok/storyblok.types'
+import {CustomStory} from '@/src/libs/storyblok/storyblok.types'
 
 import BlogCategoryComponent from './BlogCategory'
 

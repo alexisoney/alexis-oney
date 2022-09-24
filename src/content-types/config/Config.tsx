@@ -1,6 +1,6 @@
 import {StoryblokAsset, StoryblokStory} from '@alexisoney/storyblok-to-nextjs'
 
-import {CustomStory} from '@/libs/storyblok/storyblok.types'
+import {CustomStory} from '@/src/libs/storyblok/storyblok.types'
 
 export type ConfigStory = StoryblokStory<{
   _uid: string

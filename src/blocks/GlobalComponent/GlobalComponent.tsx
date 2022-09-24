@@ -1,6 +1,6 @@
 import {StoryblokBlock} from '@alexisoney/storyblok-to-nextjs'
 
-import {CustomBlock} from '@/libs/storyblok/storyblok.types'
+import {CustomBlock} from '@/src/libs/storyblok/storyblok.types'
 import DynamicComponent from '@/src/utils/DynamicComponent'
 
 interface GlobalComponentProps extends StoryblokBlock<'global-component'> {

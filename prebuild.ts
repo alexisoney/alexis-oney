@@ -6,8 +6,8 @@ import path from 'path'
 import toIco from 'to-ico'
 import urljoin from 'url-join'
 
-import Storyblok from '@/libs/storyblok/storyblok'
 import {ConfigStory} from '@/src/content-types/config'
+import Storyblok from '@/src/libs/storyblok/storyblok'
 
 generateFiles()
 

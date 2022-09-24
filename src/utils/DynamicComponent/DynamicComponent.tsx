@@ -1,8 +1,8 @@
-import {CustomBlock, CustomStory} from '@/libs/storyblok/storyblok.types'
 import BlogCategory from '@/src/blocks/BlogCategory'
 import {Footer} from '@/src/blocks/Footer'
 import {GlobalComponent} from '@/src/blocks/GlobalComponent'
 import {Navigation} from '@/src/blocks/Navigation'
+import {CustomBlock, CustomStory} from '@/src/libs/storyblok/storyblok.types'
 
 type DynamicComponent = {
   block: CustomBlock

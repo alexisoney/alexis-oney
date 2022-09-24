@@ -1,6 +1,6 @@
 import {StoryblokStory} from '@alexisoney/storyblok-to-nextjs'
 
-import {CustomBlock, CustomStory} from '@/libs/storyblok/storyblok.types'
+import {CustomBlock, CustomStory} from '@/src/libs/storyblok/storyblok.types'
 import DynamicComponent from '@/src/utils/DynamicComponent'
 
 export type LayoutStory = StoryblokStory<{

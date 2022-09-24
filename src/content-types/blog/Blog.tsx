@@ -5,10 +5,10 @@ import {
   StoryblokStory,
 } from '@alexisoney/storyblok-to-nextjs'
 
-import {CustomStory} from '@/libs/storyblok/storyblok.types'
 import {AuthorStory} from '@/src/content-types/author'
 import {CategoryStory} from '@/src/content-types/category'
 import {getLayoutStory, Layout} from '@/src/content-types/layout'
+import {CustomStory} from '@/src/libs/storyblok/storyblok.types'
 import Head from '@/src/utils/Head'
 
 export type BlogStory = StoryblokStory<{
